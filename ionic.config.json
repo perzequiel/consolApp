@@ -1,0 +1,10 @@
+{
+  "name": "ConsolApp",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/site/rest",
+      "proxyUrl": "http://www.sheepyweb.com/site/rest"
+    }
+  ]
+}

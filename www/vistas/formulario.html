@@ -1,0 +1,178 @@
+<ion-tabs class="tabs-calm tabs-icon-top">
+
+<ion-tab title="Formulario" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+
+	<ion-header-bar class="bar bar-header bar-calm">
+        <h1 class="title">ConsolApp</h1>
+		<button class="button" onclick="window.location.href = '#/login';window.location.reload();">Cerrar Sesion</button>
+  	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+
+			<div class="item item-divider">
+				<i class="icon ion-ios-personadd-outline"></i>
+				&nbsp;Datos Personales
+			</div>
+
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Nombre :</span>
+				<input id="nombre" type="text" placeholder="ingrese nombre" ng-model="nuevo.persona.nombre">
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Apellido :</span>
+				<input id="apellido" type="text" placeholder="ingrese apellido" ng-model="nuevo.persona.apellido">
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Edad :</span>
+				<input id="anios" type="tel" placeholder="cuantos años tiene?" ng-model="edad.anios">
+			</label>
+
+			<label class="item item-input item-select">
+				<div class="input-label">
+				Genero
+				</div>
+				<select id="genero" style="height:24px" ng-options="item as item.nombre for item in genero track by item.id" ng-model="aux.genero_val"></select>
+			</label>
+
+			<div class="item item-divider">
+				<i class="icon ion-ios-people-outline"></i>
+				&nbsp;Datos Familiares
+			</div>
+
+			<label class="item item-input item-select">
+				<div class="input-label">
+				Estado Civil
+				</div>
+				<select id="estadoCivil" style="height:24px" ng-options="item as item.nombre for item in estadoCivil track by item.id" ng-model="aux.estado_civil"></select>
+			</label>
+
+			<label class="item item-input item-select">
+				<div class="input-label">
+				Hijos
+				</div>
+				<select id="hijos" ng-model="aux.hijos">
+					<option>No</option>
+					<option>Si</option>
+				</select>
+			</label>
+
+			<div class="item item-divider">
+				<i class="icon ion-ios-chatbubble-outline"></i>
+				&nbsp;Consolidacion
+			</div>
+
+			<label class="item item-input item-select">
+				<div class="input-label">
+				Viene por:
+				</div>
+				<select id="vienePor" ng-model="aux.viene_por">
+					<option>1° Vez</option>
+					<option>Apartado</option>
+					<option>De Visita</option>
+					<option>Otro</option>
+				</select>
+			</label>
+
+			<label class="item item-input item-select">
+				<div class="input-label">
+				Desea ser Llamado? :
+				</div>
+				<select id="deseaSerLlamado" ng-model="aux.desea_ser_llamado">
+					<option>Si</option>
+					<option>No</option>
+				</select>
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Motivo de Oracion :</span>
+				<textarea id="motivoOracion" ng-model="nuevo.consolidacion.motivo_oracion"></textarea>
+			</label>
+
+			<div class="col col-50 col-offset-25">
+				<button class="button button-block button-positive" ng-click="guardarConsolidacion()">
+				Enviar
+				</button>
+			</div>
+		</div>
+	</ion-content>
+
+</ion-tab>
+
+<ion-tab title="Telefono" icon-on="ion-ios-telephone" icon-off="ion-ios-telephone-outline">
+
+	<ion-header-bar class="bar bar-header bar-calm">
+        <h1 class="title">ConsolApp</h1>
+		<button class="button" onclick="window.location.href = '#/login'; window.location.reload();">Cerrar Sesion</button>
+  	</ion-header-bar>
+
+  	<ion-content>
+  		<div class="item item-divider">
+			<i class="icon ion-android-call"></i>
+			&nbsp;Telefono
+		</div>
+
+		<label class="item item-input item-select">
+			<div class="input-label">
+			Tipo :
+			</div>
+			<select id="tipoTelefono" style="height:24px" ng-options="item as item.nombre for item in tipoTelefono track by item.id" ng-model="aux.tipo_tel"></select>
+		</label>
+
+		<label class="item item-input item-select">
+			<div class="input-label">
+			Compañia :
+			</div>
+			<select id="companiaTelefono" style="height:24px" ng-options="item as item.nombre for item in companiaTelefono track by item.id" ng-model="aux.compania_tel"></select>
+		</label>
+
+		<label class="item item-input">	
+			<span class="input-label">Numero :</span>
+			<input id="numeroTelefono" type="tel" placeholder="10 digitos" ng-model="nuevo.telefono.numero">
+		</label>
+  	</ion-content>
+
+</ion-tab>
+
+<ion-tab title="Direccion" icon-on="ion-ios-home" icon-off="ion-ios-home-outline">
+	
+	<ion-header-bar class="bar bar-header bar-calm">
+        <h1 class="title">ConsolApp</h1>
+		<button class="button" onclick="window.location.href = '#/login'">Cerrar Sesion</button>
+  	</ion-header-bar>
+
+	<ion-content>
+
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Direccion :</span>
+			<input id="direccion" type="text" placeholder="ingrese direccion de vivienda" ng-model="nuevo.ubicacion.direccion">
+		</label>
+
+		<label class="item item-input item-select">
+			<div class="input-label">
+			Provincia :
+			</div>
+			<select id="provincia" style="height:24px" ng-options="item as item.nombre for item in provincia track by item.id" ng-model="aux.provincia_dir"></select>
+		</label>
+
+		<div class="item item-input">
+			<span class="input-label">Localidad :</span>
+	      	<input id="searchValue" type="text" placeholder="Search" ng-model="search.nombre" style="width:100%; padding-left:11px;" />
+			</div>
+		<ion-list>
+		
+		<div class="item item-divider">
+			<i class="icon ion-android-home"></i>
+				&nbsp;Listado de Localidades
+		</div>
+		{{cargando}}
+		<ion-item  type="item-text-wrap" ng-click="setValueSearch('{{local.nombre}}')"
+				ng-repeat="local in localidad | filter:search">
+			{{local.nombre}}
+			</ion-item>
+	    </ion-list>
+ 
+ 	
+	</ion-content>
+</ion-tab>
